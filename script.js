@@ -14,8 +14,8 @@ function move(b,a,c) {
   }
   $(document).ready(() => {
     move($("#cpp"),60,true);
-    move($("#html"),50,true);
-    move($("#js"),40,true);
+    move($("#html"),70,true);
+    move($("#js"),80,true);
     move($("#css"),20,true);
     move($("#it"),100,false);
     move($("#en"),55,false);    
