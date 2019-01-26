@@ -28,6 +28,7 @@
 
         $('.parallax').parallax();
         $('.scrollspy').scrollSpy();
+        $('.sidenav').sidenav();
         var $window = $(window);
         $window.on('scroll resize', check_if_in_view);
     });
