@@ -1,7 +1,10 @@
 (function ($) {
     $(function () {
         var $animation_elements = $('.scale-transition');
-        function onOpen(){setTimeout($('.tap-target').tapTarget('close'),3000)}
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms))
+        }
+        function onOpen(){delay(3000).then(() => { $('.tap-target').tapTarget('close')})}
         function check_if_in_view() {
             console.log('funge');
             var window_height = $window.height();
@@ -30,19 +33,19 @@
                 $('.tap-target').tapTarget('open')
             } else $('.tap-target').tapTarget('close');
         }
-
+        $('.carousel').carousel();
         $('.parallax').parallax();
         $('.scrollspy').scrollSpy();
         $('.sidenav').sidenav();
         //var i = $('.tap-target').tapTarget();
-        var instances = M.TapTarget.init(document.querySelectorAll('.tap-target'), {onOpen: onOpen});
+        $('.tap-target').tapTarget({onOpen: onOpen});
         //console.log(i)
 
         //$('.tap-target').tapTarget('onOpen', setTimeout($('.tap-target').tapTarget('close'),2000));
         $('.modal').modal();
         $('.materialize-textarea').characterCounter();
         var $window = $(window);
-        $window.on('scroll resize', check_if_in_view);
+        $window.on('scroll resize load', check_if_in_view);
     });
     // end of document ready
 })(jQuery); // end of jQuery name space

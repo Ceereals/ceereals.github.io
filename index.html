@@ -10,50 +10,56 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link rel="icon" href="images/logo.jpg">
+    <meta charset="ISO-8859-1" />
+    <link href="images/logo.jpg" rel="icon">
     <title>Ceereals</title>
 
 </head>
 
 <body>
 
-<nav>
+<nav class="hide-on-med-and-down show-on-medium">
     <div class="nav-wrapper black">
         <a class="brand-logo" href="#"><img alt="" class="circle z-depth-3" src="images/logo.jpg" width="60"></a>
-        <ul class="right sidenav sidenav-fixed hide-on-med-and-up" id="slide-out">
+
+        <ul class="right hide-on-med-and-down" id="nav-mobile">
             <li><a href="#skills">Skills</a></li>
             <li><a href="#aboutme">About me</a></li>
             <li><a href="#works">Works</a></li>
-            <li><a href="#hireme">Hire me</a></li>
+            <li><a onclick="$('.modal').modal('open')">Hire me</a></li>
         </ul>
-        <ul class="right hide-on-med-and-down" id="nav-mobile">
+        <a class="sidenav-trigger" data-target="slide-out" href="#"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+<nav class="hide-on-med-and-up">
+    <div class="nav-wrapper black">
+        <a class="brand-logo hide-on-med-and-up" href="#"><img alt="" class="circle z-depth-3" src="images/logo.jpg" width="60"></a>
+        <ul class="right sidenav sidenav-fixed hide-on-med-and-up" id="slide-out">
             <li><a href="#skills">Skills</a></li>
             <li><a href="#aboutme">About me</a></li>
             <li><a href="#works">Works</a></li>
             <li>
                 <div class="divider"></div>
             </li>
-            <li><a href="#hireme">Hire me</a></li>
+            <li><a class="modal-trigger" onclick="$('.modal').modal('open')">Hire me</a></li>
         </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a class="sidenav-trigger" data-target="slide-out" href="#"><i class="material-icons">menu</i></a>
     </div>
 </nav>
-<div class="parallax-container blue-grey darken-4" id="index-banner">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <br><br>
-            <div class="row center">
-                <img alt="" class="circle z-depth-3" src="images/logo.jpg" width="70">
+
+    <div class="row blue-grey darken-4 no-pad-bot s12" id="index-banner">
+            <div class="container">
+                <br><br>
+                <div class="row center">
+                    <img alt="" class="circle z-depth-3" src="images/logo.jpg" width="70">
+                </div>
+                <h1 class="header center white-text text-white-2">Dream big. Work hard.</h1>
+
+                <br><br>
+
             </div>
-            <h1 class="header center white-text text-white-2">Dream big. Work hard.</h1>
-
-            <br><br>
-
-        </div>
     </div>
-</div>
-<div class="container">
-    <div class="section scrollspy" id="skills">
+    <div class="section" id="skills">
         <h1 class="header center">Skills</h1>
         <!--   Icon Section   -->
         <div class="row">
@@ -126,8 +132,7 @@
 
 
     </div>
-</div>
-<div id="aboutme" class="row black s12" style="margin-bottom: 0;">
+<div class="row black s12" id="aboutme" style="margin-bottom: 0;">
     <div class="section">
         <h1 class="center white-text">About Me</h1>
         <p class="center flow-text white-text s8">I'm a Italian developer coming from Florence.<br>I've worked on many
@@ -135,37 +140,84 @@
             BYE!!!</p>
     </div>
 </div>
-<div id="works" class="row blue-grey lighten-2" style="margin-bottom: 0;">
+<div class="row blue-grey lighten-2" id="works" style="margin-bottom: 0;">
     <div class="section s12">
-        some cards
+        <h1 class="center blue-grey-text text-darken-4">My Works</h1>
+        <div class="carousel">
+            <div class="col s4 carousel-item">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light" style="padding-top: 5%;">
+                        <img class="activator" src="images/ispro.png">
+                    </div>
+                    <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">ISPRO<i
+                            class="material-icons right">more_vert</i></span>
+                        <p><a href="https://fondazione-ispro.it">Website</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i
+                                class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4 carousel-item">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light blue-grey darken-4"
+                         style="padding-top: 5%;">
+                        <img class="activator" src="images/kibigo.png">
+                    </div>
+                    <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Kibigo<i
+                            class="material-icons right">more_vert</i></span>
+                        <p><a href="https://kibigo.eu">Website</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i
+                                class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4 carousel-item">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light blue-grey darken-4" style="padding-top: 5%;">
+                        <img class="activator" src="images/kibigo.png">
+                    </div>
+                    <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Kibigo - Blockchain<i
+                            class="material-icons right">more_vert</i></span>
+                        <p><a href="https://kibigo.eu/blockchain">Website</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i
+                                class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- Footer -->
 <footer class="page-footer blue-grey darken-4">
     <div class="container">
         <div class="row">
-            <div class="col l6 s12">
-                <h2 class="center  scale-transition scale-out"><i class="devicon-github-plain-wordmark"></i></h2>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
+            <div class="col l6 s12 center offset-l5">
+                <a class="white white-text " href="https://github.com/Ceereals"> <h2 class="center  scale-transition scale-out col s2"><i class="devicon-github-plain-wordmark"></i></h2></a>
+                <a class="white white-text" href="mailto:romoliriccardo.rr@gmail.com"> <h2 class="center  scale-transition scale-out col s2"><i class="material-icons" style="font-size: 50px;">mail_outline</i></h2></a>
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container">Â© 2019 Copyright Riccardo Romoli
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    <div class="footer-copyright center">
+        <div class="container">
+            <p>©2019 Copyright Riccardo Romoli</p>
         </div>
     </div>
 </footer>
 <div class="fixed-action-btn">
-    <a class="btn-floating waves-effect waves-light btn-large black modal-trigger" id="message" onclick="$('.modal').modal('open');">
+    <a class="btn-floating waves-effect waves-light btn-large black modal-trigger" id="message"
+       onclick="$('.modal').modal('open');">
         <i class="large material-icons">message</i>
     </a>
 </div>
@@ -175,33 +227,34 @@
         <p>Send me wathever you want!</p>
     </div>
 </div>
-<div id="modal1" class="modal blue-grey lighten-2">
-    <div class="modal-content" style="padding-bottom: 0;" id="mc-1">
+<div class="modal blue-grey lighten-2" id="modal1">
+    <div class="modal-content" id="mc-1" style="padding-bottom: 0;">
         <h4 class="white-text">Send me a message</h4>
-        <form class="col s12 card" action="https://formspree.io/romoliriccardo.rr@gmail.com" method="POST">
+        <form action="https://formspree.io/romoliriccardo.rr@gmail.com" class="col s12 card" method="POST">
             <div class="card-content" style="padding-bottom: 0;">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate" name="name">
-                    <label for="first_name">Name or Organization</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" id="first_name" name="name" type="text">
+                        <label for="first_name">Name or Organization</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="email" type="email" class="validate" name="_replyto">
-                    <label for="email">Email</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" id="email" name="_replyto" type="email">
+                        <label for="email">Email</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12" style="margin-bottom: 0;">
-                    <textarea id="textarea1" class="materialize-textarea" data-length="200" name="message"></textarea>
-                    <label for="textarea1">Message</label>
+                <div class="row">
+                    <div class="input-field col s12" style="margin-bottom: 0;">
+                        <textarea class="materialize-textarea" data-length="200" id="textarea1"
+                                  name="message"></textarea>
+                        <label for="textarea1">Message</label>
+                    </div>
                 </div>
-            </div>
                 <div class="row">
                     <div class="center input-field">
 
-                        <button class="btn waves-effect waves-light" type="submit" name="send">Submit
+                        <button class="btn waves-effect waves-light blue-grey lighten-2" name="send" type="submit">Submit
                             <i class="material-icons right">send</i>
                         </button>
 
